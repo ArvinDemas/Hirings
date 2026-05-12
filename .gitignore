@@ -21,3 +21,5 @@ salary/
 # Lainnya
 .DS_Store
 .vscode/
+*_files/
+*.html
