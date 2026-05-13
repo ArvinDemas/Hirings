@@ -22,4 +22,13 @@ Tim Data Science merekomendasikan opsi berikut untuk mengintegrasikan Streamlit 
 ## 4. Dataset Requirement
 Saat men-*deploy* aplikasi Streamlit (`app.py`), pastikan folder data referensi (dari Kaggle atau folder `33k/` dan `salary/`) dikonfigurasi dengan benar melalui *relative paths* atau dibiarkan menggunakan modul `kagglehub` di *production environment*.
 
+## 5. Handoff Model AI
+Tim AI Engineer telah menyelesaikan pembuatan model *Forecasting* dan *Recommendation* berbasis LSTM dan NLP. Model kecerdasan buatan tersebut berukuran lebih dari 100MB sehingga tidak diunggah langsung ke GitHub untuk menghindari batas ukuran repositori.
+
+File final dari model `skill_forecast_model.keras` dan API Fast-nya kini disetorkan di folder Google Drive Tim berikut:
+- **Tautan Google Drive:** [https://drive.google.com/drive/folders/1C8hbTSYALuCJP7bucDXzOcCNLSrttYVM?usp=drive_link](https://drive.google.com/drive/folders/1C8hbTSYALuCJP7bucDXzOcCNLSrttYVM?usp=drive_link)
+
+**Tugas Integrasi Tim Full-Stack:**
+Silakan integrasikan prototipe FastAPI (atau panggil *endpoint* tersebut secara langsung) dari *backend* kalian, lalu hubungkan ke *frontend* React JS atau platform *web app* yang kalian kembangkan!
+
 Semangat melanjutkan implementasi antarmuka utamanya!
