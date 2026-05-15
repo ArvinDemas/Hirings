@@ -1,0 +1,293 @@
+export const careerFilters = {
+  industries: [
+    { id: "all", name: "Semua" },
+    { id: "technology", name: "Teknologi" },
+    { id: "finance", name: "Keuangan" },
+    { id: "creative", name: "Kreatif" },
+    { id: "education", name: "Pendidikan" },
+  ],
+  sortOptions: [
+    { id: "highest-match", name: "Highest Match" },
+    { id: "fastest-ready", name: "Fastest Ready" },
+    { id: "highest-demand", name: "Highest Demand" },
+  ],
+};
+
+function skill(name, weight = 1, aliases = []) {
+  return { name, weight, aliases };
+}
+
+function course(title, provider, durationWeeks, url = null) {
+  return { title, provider, durationWeeks, url };
+}
+
+function step(title, duration, description, skills = []) {
+  return { title, duration, description, skills };
+}
+
+export const careerCatalog = [
+  {
+    id: "data-analyst",
+    title: "Data Analyst",
+    industryId: "technology",
+    industry: "Teknologi",
+    levelId: "entry",
+    salaryRange: "Rp 6-12 juta/bulan",
+    demandScore: 92,
+    demandLabel: "Demand Naik",
+    demandStatus: "rising",
+    badge: "Trending",
+    description:
+      "Cocok dengan kekuatan analitikmu di Python dan SQL. Gap minimal di Machine Learning.",
+    requiredSkills: [
+      skill("Python", 1.1, ["py", "pyt"]),
+      skill("SQL", 1.1),
+      skill("Excel", 0.8),
+      skill("Data Analysis", 1),
+      skill("Data Visualization", 0.9),
+      skill("Statistics", 0.9),
+      skill("Communication", 0.7),
+      skill("Problem Solving", 0.8),
+    ],
+    roadmap: [
+      step("Fondasi", "2 minggu", "Sudah punya dasar analitik dan spreadsheet.", [
+        "Excel",
+        "SQL",
+      ]),
+      step("Skill Inti", "1 bulan", "Data wrangling, EDA, visualisasi.", [
+        "Python",
+        "Data Analysis",
+        "Data Visualization",
+      ]),
+      step("Skill Lanjutan", "3 minggu", "Machine learning dasar dan statistics.", [
+        "Statistics",
+        "Machine Learning",
+      ]),
+      step("Siap Kerja", "Portfolio project, praktek industri", "Bangun dashboard dan case study.", [
+        "Communication",
+      ]),
+    ],
+    courses: [
+      course("Belajar Machine Learning", "Dicoding", 4, "https://www.dicoding.com/"),
+      course("Data Analysis with Python", "Coursera", 6, "https://www.coursera.org/"),
+    ],
+  },
+  {
+    id: "data-scientist",
+    title: "Data Scientist",
+    industryId: "technology",
+    industry: "Teknologi",
+    levelId: "entry",
+    salaryRange: "Rp 8-15 juta/bulan",
+    demandScore: 90,
+    demandLabel: "Demand Naik",
+    demandStatus: "rising",
+    badge: "High Growth",
+    description: "Butuh peningkatan di Machine Learning dan Statistics.",
+    requiredSkills: [
+      skill("Python", 1.2, ["py", "pyt"]),
+      skill("SQL", 0.9),
+      skill("Statistics", 1.2),
+      skill("Machine Learning", 1.2, ["ml"]),
+      skill("Pandas", 0.8),
+      skill("NumPy", 0.7),
+      skill("Scikit-learn", 0.8, ["sklearn"]),
+      skill("Data Visualization", 0.8),
+      skill("Problem Solving", 0.8),
+      skill("Communication", 0.6),
+    ],
+    roadmap: [
+      step("Fondasi", "3 minggu", "Python, SQL, statistics dasar.", ["Python", "SQL"]),
+      step("Modeling", "1 bulan", "Bangun model supervised dan unsupervised.", [
+        "Machine Learning",
+        "Scikit-learn",
+      ]),
+      step("Evaluasi", "3 minggu", "Validasi model dan interpretasi hasil.", ["Statistics"]),
+      step("Siap Kerja", "Portfolio project", "Buat notebook end-to-end dan deploy demo.", [
+        "Communication",
+      ]),
+    ],
+    courses: [
+      course("Machine Learning untuk Pemula", "Dicoding", 6, "https://www.dicoding.com/"),
+      course("Statistics for Data Science", "Coursera", 4, "https://www.coursera.org/"),
+    ],
+  },
+  {
+    id: "bi-analyst",
+    title: "BI Analyst",
+    industryId: "finance",
+    industry: "Keuangan",
+    levelId: "entry",
+    salaryRange: "Rp 5-10 juta/bulan",
+    demandScore: 82,
+    demandLabel: "Stabil",
+    demandStatus: "stable",
+    badge: "Stable",
+    description: "Peluang besar di analisis data bisnis, perlu kuasai Tableau dan Power BI.",
+    requiredSkills: [
+      skill("Excel", 1),
+      skill("SQL", 1),
+      skill("Tableau", 0.9),
+      skill("Power BI", 0.9),
+      skill("Data Visualization", 0.8),
+      skill("Business Analysis", 0.8),
+      skill("Communication", 0.8),
+      skill("Critical Thinking", 0.7),
+    ],
+    roadmap: [
+      step("Fondasi", "2 minggu", "Excel dan SQL untuk data bisnis.", ["Excel", "SQL"]),
+      step("Dashboard", "1 bulan", "Bangun dashboard BI.", ["Tableau", "Power BI"]),
+      step("Storytelling", "2 minggu", "Presentasi insight bisnis.", ["Communication"]),
+      step("Siap Kerja", "Portfolio dashboard", "Publikasikan dashboard studi kasus.", []),
+    ],
+    courses: [
+      course("Data Visualization with Tableau", "Coursera", 4, "https://www.coursera.org/"),
+      course("Power BI for Business Analytics", "Udemy", 5, "https://www.udemy.com/"),
+    ],
+  },
+  {
+    id: "frontend-developer",
+    title: "Frontend Developer",
+    industryId: "technology",
+    industry: "Teknologi",
+    levelId: "entry",
+    salaryRange: "Rp 6-13 juta/bulan",
+    demandScore: 88,
+    demandLabel: "Demand Naik",
+    demandStatus: "rising",
+    badge: "Trending",
+    description: "Cocok untuk profil dengan JavaScript, React, CSS, dan UI implementation.",
+    requiredSkills: [
+      skill("HTML", 0.8),
+      skill("CSS", 0.8),
+      skill("JavaScript", 1.1, ["js"]),
+      skill("React", 1.1, ["reactjs"]),
+      skill("Tailwind CSS", 0.7, ["tailwind"]),
+      skill("Vite", 0.5),
+      skill("Git", 0.8),
+      skill("UI Design", 0.6),
+      skill("Problem Solving", 0.8),
+      skill("Communication", 0.6),
+    ],
+    roadmap: [
+      step("Fondasi", "2 minggu", "HTML, CSS, JavaScript modern.", ["HTML", "CSS", "JavaScript"]),
+      step("Framework", "1 bulan", "React, routing, state, dan API integration.", ["React"]),
+      step("UI System", "3 minggu", "Responsive UI dan design handoff.", [
+        "Tailwind CSS",
+        "UI Design",
+      ]),
+      step("Siap Kerja", "Portfolio project", "Bangun web app deploy-ready.", ["Git"]),
+    ],
+    courses: [
+      course("Belajar Membuat Aplikasi Web dengan React", "Dicoding", 6),
+      course("Frontend Developer Career Path", "Scrimba", 8),
+    ],
+  },
+  {
+    id: "backend-developer",
+    title: "Backend Developer",
+    industryId: "technology",
+    industry: "Teknologi",
+    levelId: "entry",
+    salaryRange: "Rp 7-14 juta/bulan",
+    demandScore: 86,
+    demandLabel: "Demand Naik",
+    demandStatus: "rising",
+    badge: "Backend Core",
+    description: "Kuat untuk membangun API, database, autentikasi, dan integrasi service.",
+    requiredSkills: [
+      skill("Node.js", 1.1, ["node", "nodejs"]),
+      skill("Express.js", 1, ["express"]),
+      skill("REST API", 1, ["restful"]),
+      skill("PostgreSQL", 1, ["postgres"]),
+      skill("SQL", 0.9),
+      skill("JWT", 0.7),
+      skill("Docker", 0.6),
+      skill("Git", 0.8),
+      skill("Problem Solving", 0.8),
+      skill("Teamwork", 0.6),
+    ],
+    roadmap: [
+      step("Fondasi", "2 minggu", "Node.js, HTTP, REST API.", ["Node.js", "REST API"]),
+      step("Database", "3 minggu", "PostgreSQL, schema, query optimization.", [
+        "PostgreSQL",
+        "SQL",
+      ]),
+      step("Production", "3 minggu", "Auth, error handling, logging, deployment.", ["JWT", "Docker"]),
+      step("Siap Kerja", "API portfolio", "Bangun API end-to-end dengan dokumentasi.", ["Git"]),
+    ],
+    courses: [
+      course("Node.js Backend Development", "Coursera", 5),
+      course("Docker for Developers", "Udemy", 3),
+    ],
+  },
+  {
+    id: "product-designer",
+    title: "Product Designer",
+    industryId: "creative",
+    industry: "Kreatif",
+    levelId: "entry",
+    salaryRange: "Rp 5-11 juta/bulan",
+    demandScore: 78,
+    demandLabel: "Stabil",
+    demandStatus: "stable",
+    badge: "Creative",
+    description: "Cocok untuk user dengan minat UI, UX, riset pengguna, dan prototyping.",
+    requiredSkills: [
+      skill("Figma", 1),
+      skill("UI Design", 1),
+      skill("UX Design", 1),
+      skill("Wireframing", 0.8),
+      skill("Prototyping", 0.8),
+      skill("User Research", 0.8),
+      skill("Communication", 0.8),
+      skill("Critical Thinking", 0.7),
+    ],
+    roadmap: [
+      step("Fondasi", "2 minggu", "UI principles dan Figma.", ["Figma", "UI Design"]),
+      step("Research", "3 minggu", "User interview dan synthesis.", ["User Research"]),
+      step("Prototype", "3 minggu", "Wireframe dan interactive prototype.", [
+        "Wireframing",
+        "Prototyping",
+      ]),
+      step("Siap Kerja", "Case study", "Susun portfolio UX case study.", ["Communication"]),
+    ],
+    courses: [
+      course("Google UX Design Professional Certificate", "Coursera", 8),
+      course("Figma UI UX Design Essentials", "Udemy", 4),
+    ],
+  },
+  {
+    id: "learning-content-specialist",
+    title: "Learning Content Specialist",
+    industryId: "education",
+    industry: "Pendidikan",
+    levelId: "entry",
+    salaryRange: "Rp 4-9 juta/bulan",
+    demandScore: 74,
+    demandLabel: "Stabil",
+    demandStatus: "stable",
+    badge: "Education",
+    description: "Cocok untuk profil yang kuat di komunikasi, konten, dan pemahaman teknologi.",
+    requiredSkills: [
+      skill("Communication", 1),
+      skill("Content Marketing", 0.8),
+      skill("Public Speaking", 0.8),
+      skill("Digital Marketing", 0.7),
+      skill("Problem Solving", 0.7),
+      skill("Project Management", 0.7),
+      skill("Figma", 0.5),
+      skill("Data Analysis", 0.5),
+    ],
+    roadmap: [
+      step("Fondasi", "2 minggu", "Communication dan learning objectives.", ["Communication"]),
+      step("Content", "1 bulan", "Desain konten dan evaluasi pembelajaran.", ["Content Marketing"]),
+      step("Delivery", "2 minggu", "Presentasi dan facilitation.", ["Public Speaking"]),
+      step("Siap Kerja", "Portfolio lesson plan", "Buat learning module sample.", []),
+    ],
+    courses: [
+      course("Instructional Design Foundations", "LinkedIn Learning", 4),
+      course("Public Speaking Masterclass", "Coursera", 3),
+    ],
+  },
+];
